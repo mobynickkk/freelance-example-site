@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>АСПН</title>
+    </head>
+    <body>
+        <header>
+            <a id="logo">
+            </a>
+            <nav>
+                <select></select>
+                <select></select>
+            </nav>
+        </header>
+        <main>
+            <div class="title">
+
+            </div>
+            <div class="subtitle">
+
+            </div>
+            <div class="info">
+                <div class="info__available">
+
+                </div>
+                <div class="info__apply">
+
+                </div>
+                <div class="info__unavailable">
+
+                </div>
+            </div>
+            <div class="contacts">
+
+            </div>
+        </main>
+        <aside>
+            <div>
+                <h2></h2>
+                <p></p>
+                <div>
+                    <button>
+                        <div></div>
+                        <span>APPSTORE</span>
+                    </button>
+                    <button>
+                        <div></div>
+                        <span>GOOGLE PLAY</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <footer>
+            <span></span>
+            <span></span>
+            <span></span>
+        </footer>
+        <script src="http://yastatic.net/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                console.log(ymaps.geolocation.region);
+            }
+          </script>
+    </body>
+</html>

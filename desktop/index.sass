@@ -1,9 +1,14 @@
-$russianblue: #0039A6
+$russianblue: #0062AA
 $russianred: #D52B1E
 
 @font-face 
-    font-family: Activist;
-    src: url('../public/fonts/Activist.ttf');
+    font-family: Exo
+    src: url('../public/fonts/Exo2.0-Regular.otf')
+
+@font-face 
+    font-family: Montserrat
+    src: url(../public/fonts/Montserrat-Regular.otf)
+
 
     
 html, body 
@@ -20,6 +25,7 @@ header
     padding-left: 17.5vw
     padding-right: 17.5vw
     padding-top: 3vh
+    padding-bottom: 2vh
 
 #logo
     display: flex
@@ -29,10 +35,67 @@ header
     & > span
         margin-top: 1.5vh
         margin-left: 1vw
-        font-family: Activist
+        font-family: Exo
         color: $russianblue
         & > label
             color: $russianred
+
+.title
+    display: flex
+    background-color: $russianblue
+    height: 35vh
+    padding-top: 14vh
+    padding-bottom: 14vh
+    &__main
+        display: flex
+        padding-top: 10vh
+        padding-bottom: 10vh
+        padding-left: 20vw
+        width: 100%
+        background-color: rgba(0, 0, 0, 0.15);
+        &__text
+            color: white
+            font-family: Exo
+        &__flag
+            margin-top: -12.5vh
+            margin-left: 5vw
+            background-color: white
+            border-radius: 10000px
+            height: 42vh
+            width: 42vh
+            & > div:first-child
+                z-index: 1001
+                margin-left: -5vw
+                transform: matrix(1, 0.08, 0.08, 1, 0, 0)
+                background-image: url('../public/pictures/flag1.png')
+                background-size: contain
+                background-repeat: no-repeat
+                height: 42vh
+                width: 45vh
+            & > div:last-child
+                z-index: -1
+                margin-top: -42vh
+                transform: matrix(1, 0.08, 0.08, 1, 0, 0)
+                background-image: url('../public/pictures/flag.png')
+                background-size: contain
+                background-repeat: no-repeat
+                height: 42vh
+                width: 45vh
+
+.subtitle
+    text-align: center
+    align-items: center
+    background-color: white
+    margin-left: 20vw
+    padding-top: 3vh
+    padding-bottom: 3vh
+    height: 6vh
+    width: 60vw
+    margin-top: -6vh
+    border-radius: 15px
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+    font-family: Montserrat
+
 
 #cube-loader 
   align-items: center

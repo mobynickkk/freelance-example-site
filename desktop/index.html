@@ -4,11 +4,38 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="index.css">
         <title>АСПН</title>
+        <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                setTimeout(
+                    () => document.getElementById("cube-loader").
+                    style.display = "none",
+                 1900);
+                if (ymaps.geolocation.region == "Москва и Московская область") {
+                    logo__img.src = "../public/Moscow.svg";
+                }
+                
+            }
+        </script>
     </head>
     <body>
+
+        <div id="cube-loader">
+            <div class="caption">
+              <div class="cube-loader">
+                <div class="cube loader-1"></div>
+                <div class="cube loader-2"></div>
+                <div class="cube loader-4"></div>
+                <div class="cube loader-3"></div>
+              </div>
+            </div>
+          </div>
+
         <header>
             <a id="logo">
-                <div></div>
+                <img id="logo__img" 
+                src="../public/Saint_Petersburg.svg" 
+                height="100%" />
                 <span><label>АССОЦИАЦИЯ</label> СОЦИАЛЬНОЙ<br />
                     ПОДДЕРЖКИ НАСЕЛЕНИЯ</span>
             </a>
@@ -60,12 +87,9 @@
             <span></span>
             <span></span>
         </footer>
-        <script src="http://yastatic.net/jquery/2.1.1/jquery.min.js"></script>
-        <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
-        <script type="text/javascript">
-            window.onload = function () {
-                console.log(ymaps.geolocation.region);
-            }
-          </script>
+
+        
+
+        <script src="index.js"></script>
     </body>
 </html>

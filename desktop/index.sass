@@ -1,5 +1,6 @@
 $russianblue: #0062AA
-$russianred: #D52B1E
+$russianred: #E21C2A
+$accentblue: #005391
 
 @font-face 
     font-family: Exo
@@ -16,6 +17,7 @@ html, body
     padding: 0
     height: 100%
     background-color: white
+    overflow-x: hidden
 
 header
     display: flex
@@ -43,6 +45,7 @@ header
 .title
     display: flex
     background-color: $russianblue
+    width: 100vw
     height: 35vh
     padding-top: 14vh
     padding-bottom: 14vh
@@ -54,6 +57,7 @@ header
         width: 100%
         background-color: rgba(0, 0, 0, 0.15);
         &__text
+            margin-top: -4vh
             color: white
             font-family: Exo
         &__flag
@@ -87,8 +91,12 @@ header
     align-items: center
     background-color: white
     margin-left: 20vw
+    margin-right: 20vw
     padding-top: 3vh
     padding-bottom: 3vh
+    padding-left: 1vw
+    padding-right: 1vw
+    font-size: 2vh
     height: 6vh
     width: 60vw
     margin-top: -6vh
@@ -96,6 +104,75 @@ header
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
     font-family: Montserrat
 
+.info
+    display: flex
+    flex-direction: column
+    &__available
+        margin-top: 5vh
+        & > h1 
+            color: $accentblue
+            text-align: center
+            font-family: Exo
+        &__table
+            display: flex
+            flex-direction: column
+            margin-top: 3vh
+            &__row
+                display: flex
+                margin-left: 19vw
+                &:last-child
+                    margin-top: 2vh
+                & > div
+                    display: flex
+                    width: 30vw
+                    height: 12vh
+                    border: 1px solid #E6E6E6
+                    box-sizing: border-box
+                    &:first-child
+                        margin-right: 2vw
+                    & > div:last-child
+                        width: 21vw
+                        & > h3 
+                            font-family: Exo
+                            text-transform: uppercase
+                        & > p 
+                            margin-top: -1.5vh    
+                            font-family: Montserrat
+                            font-size: 0.8rem
+
+.info__pict
+    display: inline-block
+    background-color: #F5F5F5
+    margin-top: 2vh
+    margin-left: 2vw
+    margin-right: 1vw
+    height: 4vw
+    width: 4vw
+    border-radius: 10000px
+    
+#adult
+    background-image: url('../public/pictures/adult.svg')
+    background-repeat: no-repeat
+    background-size: 2vw auto
+    background-position: center 
+
+#exp
+    background-image: url('../public/pictures/3.svg')
+    background-repeat: no-repeat
+    background-size: 1vw auto
+    background-position: center 
+
+#tax
+    background-image: url('../public/pictures/tax.svg')
+    background-repeat: no-repeat
+    background-size: 2.2vw auto
+    background-position: 1.1vw
+
+#old
+    background-image: url('../public/pictures/old.svg')
+    background-repeat: no-repeat
+    background-size: 2vw auto
+    background-position: center 
 
 #cube-loader 
   align-items: center

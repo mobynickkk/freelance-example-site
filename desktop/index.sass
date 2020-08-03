@@ -92,12 +92,11 @@ header
     background-color: white
     margin-left: 20vw
     margin-right: 20vw
-    padding-top: 3vh
+    padding-top: 3.5vh
     padding-bottom: 3vh
     padding-left: 1vw
     padding-right: 1vw
-    font-size: 2vh
-    height: 6vh
+    height: 5.5vh
     width: 60vw
     margin-top: -6vh
     border-radius: 15px
@@ -172,6 +171,103 @@ header
                 color: $russianblue
                 margin-top: -1vh
                 margin-bottom: 2vh
+    &__unavailable
+        padding-top: 7.5vh
+        padding-left: 19.5vw
+        padding-right: 19.5vw
+        & > h1 
+            font-family: Exo
+            color: $accentblue
+            & > label
+                color: $russianred
+        &__container
+            margin-top: 5vh
+            display: flex
+        &__points
+            display: flex
+            flex-direction: column
+            width: 30vw
+            &__item
+                border-left: 4px solid $russianred
+                height: 7.5vh
+                padding-left: 2vw
+                margin-bottom: 3vh
+                & > h3 
+                    margin-top: 0
+                    margin-bottom: 0
+                    font-family: Exo
+                    text-transform: uppercase
+                & > p 
+                    margin-top: 0.5vh
+                    font-family: Montserrat
+                    font-size: 0.8rem
+        &__additional
+            margin-left: 7vw
+            padding-top: 4vh
+            padding-left: 2vw
+            padding-right: 1.5vw
+            padding-bottom: 3vh
+            height: 30vh
+            width: 25vw
+            border-radius: 15px
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+            & > h3 
+                font-family: Exo
+                color: $russianblue
+            & > p 
+                font-family: Montserrat
+    &__faq
+        margin-top: 7vh
+        & > h1 
+            text-align: center
+            font-family: Exo
+            color: $accentblue
+            margin-bottom: 4vh
+        &__item
+            margin-top: 1vh
+            margin-left: 20vw
+            margin-right: 20vw
+            width: 56vw
+            border: 1px solid #E6E6E6
+            padding-left: 2vw
+            padding-right: 2vw
+            padding-top: 3vh
+            padding-bottom: 3vh
+            transition: 0.6s all ease
+            &__toggle
+                margin-top: -3vh
+                margin-left: -2vw
+                margin-bottom: -3vh
+                margin-right: -2vw
+                appearance: none
+                outline: none
+                z-index: 10001
+                height: 8vh
+                width: 60vw
+                &:checked ~ .info__faq__answer
+                    display: block
+                &:checked 
+        &__question
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-top: -2vh
+            & > label
+                font-family: Montserrat
+            & > div
+                height: 1vh
+                width: 1vw
+                background-image: url('../public/pictures/arrow_down.svg')
+                background-repeat: no-repeat
+                background-size: contain
+        &__answer
+            display: none
+            font-family: Montserrat
+            margin-top: 2.5vh
+            border-top: 1px solid #E6E6E6
+            padding-top: 5vh
+
+
     
 
 .info__pict

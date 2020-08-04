@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="form.css">
+        <title>Анкета</title>
+        <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                setTimeout(
+                    () => document.getElementById("cube-loader").
+                    style.display = "none",
+                1);
+                if (ymaps.geolocation.region == "Москва и Московская область") {
+                    logo__img.src = "../public/Moscow.svg";
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+
+        <div id="cube-loader">
+            <div class="caption">
+              <div class="cube-loader">
+                <div class="cube loader-1"></div>
+                <div class="cube loader-2"></div>
+                <div class="cube loader-4"></div>
+                <div class="cube loader-3"></div>
+              </div>
+            </div>
+          </div>
+
+        <header>
+            <a id="logo">
+                <img id="logo__img" 
+                src="../public/Saint_Petersburg.svg" 
+                height="100%" />
+                <span><label>АССОЦИАЦИЯ</label> СОЦИАЛЬНОЙ<br />
+                    ПОДДЕРЖКИ НАСЕЛЕНИЯ</span>
+            </a>
+            <nav>
+                <select></select>
+                <select></select>
+            </nav>
+        </header>
+
+        <main>
+            <div class="form">
+                <h2>Заполните анкету для расчета положенной вам выплаты.</h2>
+                <form>
+                    <label for="sname">Фамилия</label>
+                    <input id="sname" />
+                    <label for="fname">Имя</label>
+                    <input id="fname" />
+                    <label for="lname">Отчество</label>
+                    <input id="lname" />
+                    <label>Укажите Ваш пол:</label>
+                    <div class="form__sex">
+                        <input name="sex" id="male" type="radio" />
+                        <label class="sex_letter" for="male">М</label>
+                        <input name="sex" id="female" type="radio" />
+                        <label class="sex_letter" for="female">Ж</label>
+                    </div>
+                    <label for="passport">Четыре последние цифры номера паспорта</label>
+                    <input id="passport" />
+                    <label for="birth">Дата рождения</label>
+                    <input id="birth" />
+                    <button type="submit">отправить запрос на расчет выплаты</button>
+                </form>
+            </div>
+        </main>
+        <aside>
+            <div class="contacts">
+                <div class="contacts__text">
+                    <h1>
+                        Остались вопросы?
+                    </h1>
+                    <p>
+                        Задайте их по электронной почте: pochta@test.ru
+                    </p>
+                </div>
+                <div class="contacts__picture">
+                    <a>
+
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <footer>
+            <div>
+                <h4><label>Ассоциация</label> социальной поддержки населения</h4>
+                <span>Москва и Московская область</span>
+            </div>
+            <span>При поддержке ИТ-штаба</span>
+        </footer>
+    </body>
+</html>

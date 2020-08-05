@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="index.css">
         <link rel="stylesheet" type="text/css" href="form.css">
         <title>Анкета</title>
+        <script src="form.js" defer></script>
         <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
         <script type="text/javascript">
             window.onload = function () {
@@ -49,25 +50,25 @@
         <main>
             <div class="form">
                 <h2>Заполните анкету для расчета положенной вам выплаты.</h2>
-                <form>
+                <form onsubmit="sendForm(event)">
                     <label for="sname">Фамилия</label>
-                    <input id="sname" />
+                    <input class="form__field" id="sname" />
                     <label for="fname">Имя</label>
-                    <input id="fname" />
+                    <input class="form__field"  id="fname" />
                     <label for="lname">Отчество</label>
-                    <input id="lname" />
+                    <input class="form__field"  id="lname" />
                     <label>Укажите Ваш пол:</label>
                     <div class="form__sex">
-                        <input name="sex" id="male" type="radio" />
+                        <input class="form__field"  name="sex" id="male" type="radio" />
                         <label class="sex_letter" for="male">М</label>
-                        <input name="sex" id="female" type="radio" />
+                        <input class="form__field"  name="sex" id="female" type="radio" />
                         <label class="sex_letter" for="female">Ж</label>
                     </div>
                     <label for="passport">Четыре последние цифры номера паспорта</label>
-                    <input id="passport" />
+                    <input class="form__field" id="passport" maxlength="4" />
                     <label for="birth">Дата рождения</label>
-                    <input id="birth" />
-                    <button type="submit">отправить запрос на расчет выплаты</button>
+                    <input class="form__field" id="birth" type="date" min="01.01.1900" />
+                    <button type="submit" >отправить запрос на расчет выплаты</button>
                 </form>
             </div>
         </main>
@@ -95,5 +96,6 @@
             </div>
             <span>При поддержке ИТ-штаба</span>
         </footer>
+        
     </body>
 </html>

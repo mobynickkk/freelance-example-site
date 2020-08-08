@@ -1,0 +1,298 @@
+$russianblue: #0062AA
+$russianred: #E21C2A
+$accentblue: #005391
+
+@font-face 
+    font-family: Exo
+    src: url('../public/fonts/Exo2.0-Regular.otf')
+
+@font-face 
+    font-family: Montserrat
+    src: url('../public/fonts/Montserrat-Regular.otf')
+
+@font-face 
+    font-family: ProximaNova
+    src: url('../public/fonts/ProximaNova-Regular.ttf')
+
+.message
+	margin-top: 1vh
+	padding-top: 1vh
+	padding-bottom: 1vh
+	padding-left: 1vw
+	padding-right: 1vw
+	font-family: Montserrat
+	font-size: 0.8rem
+	background: #E0F2FF
+	border-radius: 10px 10px 0px 10px
+	&:first-child
+		margin-top: auto
+
+.answer
+	color: white
+	border: none
+	margin-left: 2vw
+	font-family: Montserrat
+	height: 4vh
+	width: 8vw
+	background-color: #868686
+	border-radius: 5px
+	&_positive
+		background-color: $accentblue
+		margin-left: 13vw
+
+.chat
+	margin-left: 20vw
+	margin-top: 4vh
+	margin-right: 20vw
+	padding-left: 1vw
+	display: flex
+	height: 60vh
+	border: 1px solid #E6E6E6
+	&__aside
+		flex: 2.7
+		position: relative
+		border-right: 1px solid #E6E6E6
+		& > h4 
+			font-family: Exo
+			color: $russianblue
+			margin-top: 2.5vh
+			margin-bottom: 6vh
+			& > label
+				color: $russianred
+		&__label
+			font-family: Montserrat
+			font-size: 0.6rem
+			margin-bottom: 0.3vh
+			color: gray
+		&__p
+			font-family: Montserrat
+			font-size: 0.8rem
+			margin-top: 0.3vh
+			&:last-child
+				font-size: 1.2rem
+		& > div
+			position: absolute
+			bottom: 0
+	&__main
+		flex: 9
+		display: flex
+		flex-direction: column
+	&__header
+		flex: 1
+		display: flex
+		padding-left: 2vw
+		padding-right: 2vw
+		border-bottom: 1px solid #E6E6E6
+	&__text
+		overflow-y: hidden
+		flex: 4.5
+		background-color: #F8F8F8
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		padding: 1vh
+	&__input
+		flex: 0.8
+		border-top: 1px solid #E6E6E6
+		padding-top: 2.5vh
+
+.photo
+    margin-top: 2vh
+    height: 6vh
+    width: 6vh
+    border-radius: 10000px
+    background-image: url('../public/pictures/nosova.png')
+    background-repeat: no-repeat
+    background-size: contain
+
+.info
+    margin-left: 2vw
+    display: flex
+    flex-direction: column
+
+.name
+    font-family: Exo
+    margin-top: 2.5vh
+    margin-bottom: 0
+
+.position
+    font-family: Montserrat
+    margin-top: 1vh
+    font-size: 0.8rem
+
+.letter
+	width: 50vw
+	z-index: 10001
+	position: absolute
+	top: 25vh
+	left: 25vw
+	padding-top: 4vh
+	padding-left: 3vw
+	padding-right: 3vw
+	padding-bottom: 3vh
+	display: flex
+	flex-direction: column
+	& > h2 
+		color: $accentblue
+		font-family: Exo
+		text-align: center
+	& > p 
+		font-family: Montserrat
+		font-size: 0.8rem
+	& > div
+		display: flex
+		justify-content: space-between
+		& > label
+			font-family: Montserrat
+			font-size: 0.8rem
+	& > button 
+		background: $accentblue
+		width: 20vw
+		height: 5vh
+		margin-left: 15vw
+
+    
+    
+//======================================    
+    
+.cssload-square 
+	margin: 4vh auto
+	width: 19px
+	height: 19px
+	transform: rotate(-45deg)
+	-o-transform: rotate(-45deg)
+	-ms-transform: rotate(-45deg)
+	-webkit-transform: rotate(-45deg)
+	-moz-transform: rotate(-45deg)
+
+
+.cssload-square-part 
+	position: absolute
+	width: 19px
+	height: 19px
+	z-index: 1
+	animation: cssload-part-anim 0.92s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate
+	-o-animation: cssload-part-anim 0.92s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate
+	-ms-animation: cssload-part-anim 0.92s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate
+	-webkit-animation: cssload-part-anim 0.92s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate
+	-moz-animation: cssload-part-anim 0.92s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate
+
+
+.cssload-square-green
+	background: rgba(0,99,170,0.91)
+	right: 0
+	bottom: 0
+	animation-direction: alternate-reverse
+	-o-animation-direction: alternate-reverse
+	-ms-animation-direction: alternate-reverse
+	-webkit-animation-direction: alternate-reverse
+	-moz-animation-direction: alternate-reverse
+
+
+.cssload-square-pink
+	background: rgba(226,28,42,0.91)
+	left: 0
+	top: 0
+
+
+.cssload-square-blend 
+	background: rgba(113,63,106,0.89)
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 2
+	animation: blend-anim 0.92s ease-in infinite
+	-o-animation: blend-anim 0.92s ease-in infinite
+	-ms-animation: blend-anim 0.92s ease-in infinite
+	-webkit-animation: blend-anim 0.92s ease-in infinite
+	-moz-animation: blend-anim 0.92s ease-in infinite
+
+
+
+
+
+
+@keyframes blend-anim 
+	0% 
+		transform: scale(0.01, 0.01) rotateY(0)
+		animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715)
+	50%
+		transform: scale(1, 1) rotateY(0)
+		animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1)
+	100% 
+		transform: scale(0.01, 0.01) rotateY(0)
+
+@-o-keyframes blend-anim 
+	0% 
+		-o-transform: scale(0.01, 0.01) rotateY(0)
+		-o-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715)
+	50% 
+		-o-transform: scale(1, 1) rotateY(0)
+		-o-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1)
+	100% 
+		-o-transform: scale(0.01, 0.01) rotateY(0)
+
+@-ms-keyframes blend-anim 
+	0% 
+		-ms-transform: scale(0.01, 0.01) rotateY(0)
+		-ms-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715)
+	50% 
+		-ms-transform: scale(1, 1) rotateY(0)
+		-ms-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1)
+	100% 
+		-ms-transform: scale(0.01, 0.01) rotateY(0)
+
+@-webkit-keyframes blend-anim 
+	0% 
+		-webkit-transform: scale(0.01, 0.01) rotateY(0)
+		-webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715)
+	50% 
+		-webkit-transform: scale(1, 1) rotateY(0)
+		-webkit-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1)
+	100% 
+		-webkit-transform: scale(0.01, 0.01) rotateY(0)
+
+@-moz-keyframes blend-anim 
+	0% 
+		-moz-transform: scale(0.01, 0.01) rotateY(0)
+		-moz-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715)
+	50% 
+		-moz-transform: scale(1, 1) rotateY(0)
+		-moz-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1)
+	100%
+		-moz-transform: scale(0.01, 0.01) rotateY(0)
+
+
+@keyframes cssload-part-anim 
+	0% 
+		transform: translate3d(-10px, -10px, 0)
+	100% 
+		transform: translate3d(10px, 10px, 0)
+
+
+@-o-keyframes cssload-part-anim 
+	0% 
+		-o-transform: translate3d(-10px, -10px, 0)
+	100% 
+		-o-transform: translate3d(10px, 10px, 0)
+
+@-ms-keyframes cssload-part-anim 
+	0% 
+		-ms-transform: translate3d(-10px, -10px, 0)
+	100% 
+		-ms-transform: translate3d(10px, 10px, 0)
+
+@-webkit-keyframes cssload-part-anim 
+	0% 
+		-webkit-transform: translate3d(-10px, -10px, 0)
+	100% 
+		-webkit-transform: translate3d(10px, 10px, 0)
+
+
+@-moz-keyframes cssload-part-anim 
+	0% 
+		-moz-transform: translate3d(-10px, -10px, 0)
+	100% 
+		-moz-transform: translate3d(10px, 10px, 0)

@@ -1,0 +1,43 @@
+$russianblue: #0062AA
+$russianred: #E21C2A
+$accentblue: #005391
+
+@font-face 
+    font-family: Exo
+    src: url('../public/fonts/Exo2.0-Regular.otf')
+
+@font-face 
+    font-family: Montserrat
+    src: url('../public/fonts/Montserrat-Regular.otf')
+
+@font-face 
+    font-family: ProximaNova
+    src: url('../public/fonts/ProximaNova-Regular.ttf')
+    
+.form
+    &_req
+        margin-left: 20vw
+        margin-right: 20vw
+    &__label
+        font-family: Montserrat
+        font-size: 0.7rem
+        margin-bottom: 0.7vh
+    &__field
+        height: 4vh
+        border: 1px solid #E4E4E4
+        box-sizing: border-box
+        border-radius: 3px
+        margin-bottom: 1vh
+        padding-left: 1vw
+        outline-color: $accentblue
+    &__row
+        display: flex
+    &__column
+        display: flex
+        flex-direction: column
+        flex: 1
+        &:first-child
+            margin-right: 3vw
+    &__submit
+        margin: auto
+        width: 30vw

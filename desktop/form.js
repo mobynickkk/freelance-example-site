@@ -102,7 +102,8 @@ const sendForm = async (ev) => {
     h1.style.marginBottom = "2vh";
     let num = (100 + getRandomInt(150));
     let ber = (100 + getRandomInt(899));
-    h1.innerText = "" + num + " " + ber + " руб."
+    h1.innerText = "" + num + " " + ber + " руб.";
+    localStorage.setItem('number', "" + num + " " + ber);
     p.classList.remove("loading_ends");
     p.style.marginTop = "1vh";
     p.innerText = "Для получения средств укажите реквизиты на следующем этапе… ";
@@ -112,7 +113,7 @@ const sendForm = async (ev) => {
     p1.style.marginTop = "5vh";
     p1.innerText = "Если автоматическая переадресация не произошла, то жмите на кнопку ниже";
     let but = document.createElement("a");
-    but.href = "";
+    but.href = "req.html";
     but.className = "get-req";
     but.innerText = "Перейти к заполнению реквизитов";
 
@@ -126,3 +127,31 @@ const sendForm = async (ev) => {
     form.appendChild(p1);
     form.appendChild(but);
 } 
+
+
+const sendApplication = async ev => {
+    ev.preventDefault();
+
+    let form = document.querySelector(".form");
+
+    let fields = document.querySelectorAll(".form__field");
+
+    let flag = 0;
+    for (let i = 0; i < fields.length; ++i) {
+        if (fields[i].value === "") {
+            flag = 1;
+            fields[i].style.border = "1px solid #E21C2A";
+        } else if (fields[i].type == "radio" && fields[i].checked) {
+            localStorage.setItem(fields[i].id, "true");
+        } else if (fields[i].type == "radio" && !(fields[i].checked)) {
+            localStorage.setItem(fields[i].id, "false");
+        } else {
+            localStorage.setItem(fields[i].id, fields[i].value);
+        }
+    }
+
+    if (flag === 1)
+        return;
+    
+        document.location.href = "chat.html";
+}

